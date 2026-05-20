@@ -1,0 +1,169 @@
+---
+import experience from "../data/experience.json";
+---
+
+<section class="experience">
+  <div class="experience__inner">
+    <div class="experience__content">
+      <p class="experience__eyebrow">{experience.eyebrow}</p>
+      <h2 class="experience__title">{experience.title}</h2>
+      <p class="experience__text">{experience.subtitle}</p>
+    </div>
+
+    <div class="experience__stats">
+      {
+        experience.stats.map((item) => (
+          <div class="experience-stat">
+            <div
+              class="experience-stat__circle"
+              style={`--value:${item.value};`}
+              aria-label={`${item.label}: ${item.value}%`}
+            >
+              <span>{item.value}%</span>
+            </div>
+            <p class="experience-stat__label">{item.label}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding-block: 6.5rem;
+    background: #f0c13b;
+    color: #0b1020;
+  }
+
+  .experience__inner {
+    width: min(100% - 2rem, 1220px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 4.5rem;
+  }
+
+  .experience__content {
+    max-width: 30rem;
+  }
+
+  .experience__eyebrow {
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .experience__title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(3rem, 4.8vw, 4.75rem);
+    line-height: 0.96;
+    font-weight: 700;
+    max-width: 8ch;
+    color: #0b1020;
+  }
+
+  .experience__text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111827;
+  }
+
+  .experience__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .experience-stat {
+    text-align: center;
+  }
+
+  .experience-stat__circle {
+    --value: 85;
+    --size: 12rem;
+    --thickness: 7px;
+
+    width: var(--size);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    border-radius: 50%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: conic-gradient(
+      from -52deg,
+      rgba(255, 255, 255, 0.98) calc(var(--value) * 1%),
+      rgba(191, 158, 60, 0.55) 0
+    );
+  }
+
+  .experience-stat__circle::before {
+    content: "";
+    position: absolute;
+    inset: var(--thickness);
+    border-radius: 50%;
+    background: #f0c13b;
+  }
+
+  .experience-stat__circle::after {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    left: 0.95rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #0b1020;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.96);
+  }
+
+  .experience-stat__circle span {
+    position: relative;
+    z-index: 1;
+    font-size: 2.35rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #0b1020;
+  }
+
+  .experience-stat__label {
+    margin: 1.5rem 0 0;
+    font-size: 1.15rem;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #0b1020;
+  }
+
+  @media (max-width: 1100px) {
+    .experience__inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .experience__content {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .experience__stats {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .experience-stat__circle {
+      --size: 10rem;
+    }
+
+    .experience__title {
+      font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+  }
+</style>

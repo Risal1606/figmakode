@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/Layout.astro";
+import "../styles/about.css";
+import Igniting from "../components/igniting.astro";
+import OurVision from "../components/OurVision.astro";
+import AboutValueSection from "@components/AboutValueSection.astro";
+import TeamSection from "../components/TeamSection.astro";
+import FaqSection from "../components/FaqSection.astro";
+---
+
+<BaseLayout title="About">
+  <main class="about-page">
+    <Igniting />
+    <OurVision />
+    <AboutValueSection />
+    <TeamSection />
+    <FaqSection />
+  </main>
+</BaseLayout>

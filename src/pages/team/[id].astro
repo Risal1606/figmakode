@@ -1,0 +1,309 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import employeeData from "../../data/employees.json";
+
+export async function getStaticPaths() {
+  return employeeData.map((employee) => ({
+    params: { id: employee.id.toString() },
+    props: { employee },
+  }));
+}
+
+const { employee } = Astro.props;
+---
+
+<Layout title={employee.name}>
+  <main class="team-single-view">
+    <section class="team-single-view__section">
+      <div class="team-single-view__inner">
+        <div class="team-single-view__left">
+          <div class="team-single-view__image-shell">
+            <img
+              src={employee.img}
+              alt={employee.name}
+              class="team-single-view__image"
+            />
+          </div>
+        </div>
+
+        <div class="team-single-view__right">
+          <p class="team-single-view__eyebrow">Team Member</p>
+          <h1 class="team-single-view__name">{employee.name}</h1>
+          <p class="team-single-view__role">{employee.title}</p>
+
+          <div class="team-single-view__socials">
+            {
+              employee.social_links.map((link) => (
+                <a
+                  href={link.url}
+                  class="team-single-view__social"
+                  aria-label={link.platform}
+                >
+                  {link.platform === "instagram" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle
+                        cx="17.5"
+                        cy="6.5"
+                        r="0.8"
+                        fill="currentColor"
+                        stroke="none"
+                      />
+                    </svg>
+                  )}
+                  {link.platform === "facebook" && (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                  )}
+                </a>
+              ))
+            }
+          </div>
+
+          <div class="team-single-view__info">
+            <div class="team-single-view__block">
+              <span class="team-single-view__label">About</span>
+              <p class="team-single-view__text">{employee.description_long}</p>
+            </div>
+
+            <div class="team-single-view__block">
+              <span class="team-single-view__label">Experience</span>
+              <p class="team-single-view__text">{employee.past_experience}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .team-single-view {
+    background: #f7f6f2;
+    color: #111;
+  }
+
+  .team-single-view__section {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: 32px 0;
+    overflow: clip;
+  }
+
+  .team-single-view__inner {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  .team-single-view__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .team-single-view__image-shell {
+    width: min(100%, 420px);
+    border-radius: 22px;
+    overflow: hidden;
+    background: #ece7df;
+    transform: translateX(18px);
+  }
+
+  .team-single-view__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .team-single-view__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 640px;
+  }
+
+  .team-single-view__eyebrow {
+    margin: 0 0 10px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: #78716c;
+    font-family: system-ui, sans-serif;
+  }
+
+  .team-single-view__name {
+    margin: 0 0 8px;
+    font-size: clamp(2.2rem, 4.8vw, 4.75rem);
+    line-height: 0.95;
+    color: #111;
+    font-family: "Georgia", serif;
+  }
+
+  .team-single-view__role {
+    margin: 0 0 18px;
+    font-size: 0.95rem;
+    color: #5f5f5f;
+    font-family: system-ui, sans-serif;
+  }
+
+  .team-single-view__socials {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .team-single-view__social {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid #dfdbd4;
+    color: #111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .team-single-view__social:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+  }
+
+  .team-single-view__info {
+    display: grid;
+    gap: 18px;
+  }
+
+  .team-single-view__block {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e1db;
+  }
+
+  .team-single-view__label {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #78716c;
+    font-family: system-ui, sans-serif;
+  }
+
+  .team-single-view__text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #535353;
+    font-family: system-ui, sans-serif;
+  }
+
+  .team-single-view__actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .team-single-view__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    font-family: system-ui, sans-serif;
+    transition: background 0.2s ease;
+  }
+
+  .team-single-view__button:hover {
+    background: #2c2c2c;
+  }
+
+  .team-single-view__button--ghost {
+    background: transparent;
+    color: #111;
+    border: 1px solid #d7d2ca;
+  }
+
+  .team-single-view__button--ghost:hover {
+    background: #fff;
+  }
+
+  @media (max-width: 980px) {
+    .team-single-view__section {
+      min-height: auto;
+      padding: 56px 0 72px;
+    }
+
+    .team-single-view__inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .team-single-view__left {
+      justify-content: flex-start;
+    }
+
+    .team-single-view__image-shell {
+      transform: none;
+      width: min(100%, 420px);
+    }
+
+    .team-single-view__right {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .team-single-view__inner {
+      padding: 0 20px;
+    }
+
+    .team-single-view__actions {
+      flex-direction: column;
+    }
+
+    .team-single-view__button {
+      width: 100%;
+    }
+  }
+</style>

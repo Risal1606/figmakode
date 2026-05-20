@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import PeterImage from "../data/images/peter.png";
+---
+
+<section class="expect">
+  <div class="expect__inner">
+    <div class="expect__media">
+      <div class="expect__shape"></div>
+      <Image src={PeterImage} alt="Peter" class="expect__image" />
+    </div>
+
+    <div class="expect__content">
+      <p class="expect__eyebrow">We’ll work with you</p>
+      <h2 class="expect__title">What To Expect</h2>
+      <p class="expect__text">
+        Our collaboration is built on transparency, efficiency, and measurable
+        results. Together, we create strategies tailored to your unique needs
+        and goals.
+      </p>
+
+      <ul class="expect__list">
+        <li>
+          Collaborate to build actionable strategies that drive sustainable
+          growth.
+        </li>
+        <li>
+          Identify opportunities to optimize processes and improve measurable
+          results.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+---
+import coreValues from "@data/coreValues.json";
+---
+
+<section class="values">
+  <div class="values__inner">
+    <div class="values__top">
+      <div class="values__heading">
+        <p class="values__eyebrow">{coreValues.eyebrow}</p>
+        <h2 class="values__title">{coreValues.title}</h2>
+        <p class="values__text">{coreValues.subtitle}</p>
+      </div>
+
+      <a href={coreValues.button.link} class="values__button">
+        {coreValues.button.text}
+      </a>
+    </div>
+
+    <div class="values__grid">
+      {
+        coreValues.values.map((value) => (
+          <article class="values-card">
+            <div class="values-card__icon">{value.icon}</div>
+            <h3 class="values-card__title">{value.title}</h3>
+            <p class="values-card__text">{value.description}</p>
+            <a href={value.link.url} class="values-card__link">
+              {value.link.text} →
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

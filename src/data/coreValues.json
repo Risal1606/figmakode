@@ -8,7 +8,7 @@
   },
   "values": [
     {
-      "icon": "layers",
+      "icon": "📚",
       "title": "Creative Ideas",
       "description": "Explore innovative strategies tailored to your goals. Unlock unique solutions that inspire growth and creativity. Drive impactful change.",
       "link": {
@@ -17,7 +17,7 @@
       }
     },
     {
-      "icon": "bars",
+      "icon": "📊",
       "title": "Best Features",
       "description": "Deliver advanced tools designed for seamless integration. Optimize workflows with cutting-edge technology.",
       "link": {
@@ -26,7 +26,7 @@
       }
     },
     {
-      "icon": "globe",
+      "icon": "🌍",
       "title": "Experience",
       "description": "Leverage years of proven expertise across diverse industries. Empower your business with our skilled professionals. Achieve sustainable success.",
       "link": {
@@ -35,7 +35,7 @@
       }
     },
     {
-      "icon": "gear",
+      "icon": "⚙️",
       "title": "Easy Solutions",
       "description": "Streamline your challenges with simple, effective solutions. Ensure hassle-free implementation for measurable results.",
       "link": {

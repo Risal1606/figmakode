@@ -1,0 +1,48 @@
+<header class="site-header">
+  <div class="site-header__container">
+    <a href="/" class="site-header__brand" aria-label="AskExperts home">
+      Ask<span>Experts</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/case">Case Study</a>
+      <a href="/team">Team</a>
+      <a href="/about">About</a>
+    </nav>
+
+    <details class="site-header__account">
+      <summary class="site-header__login">Login</summary>
+
+      <div
+        class="login-panel"
+        role="dialog"
+        aria-labelledby="login-panel-title"
+      >
+        <h2 id="login-panel-title" class="login-panel__title">
+          Dashboard Login
+        </h2>
+
+        <form class="login-panel__form">
+          <label class="login-panel__field">
+            <span>Email address</span>
+            <input type="email" name="email" autocomplete="email" />
+          </label>
+
+          <label class="login-panel__field">
+            <span>Password</span>
+            <input
+              type="password"
+              name="password"
+              autocomplete="current-password"
+            />
+          </label>
+
+          <button type="submit" class="login-panel__submit"
+            >Go to dashboard</button
+          >
+        </form>
+      </div>
+    </details>
+  </div>
+</header>

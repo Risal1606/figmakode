@@ -1,40 +1,90 @@
 :root {
   /* ==== Colors ==== */
-  /* PRIMITIVES */
   --color-yellow-500: #ffcc4a;
-  --color-green-400: #a4eda4;
-  --color-neutrals-50: #f9fafb;
-  --color-neutrals-200: #eaedf1;
-  --color-neutrals-900: #030712;
-  --color-neutrals-700: #5a606f;
-  --color-blue-700: #101828;
-  --color-blue-700-transparent: rgba(16 24 40 / 0.9);
-  --color-green-600: #4bb84b;
-  --color-neutrals-100: #f9fafb;
-  --color-neutrals-400: #99a1af;
   --color-yellow-600: #fbc336;
+  --color-green-400: #a4eda4;
+  --color-green-600: #4bb84b;
+  --color-neutrals-50: #f9fafb;
+  --color-neutrals-100: #f3f4f6;
+  --color-neutrals-200: #eaedf1;
+  --color-neutrals-400: #99a1af;
+  --color-neutrals-700: #5a606f;
+  --color-neutrals-900: #030712;
+  --color-blue-700: #101828;
+  --color-blue-700-transparent: rgb(16 24 40 / 0.9);
 
-  /* TOKENS */
+  /* ==== Semantic colors ==== */
   --color-action: var(--color-yellow-500);
   --color-text: var(--color-neutrals-900);
   --color-text-muted: var(--color-neutrals-700);
+  --color-text-weak: var(--color-neutrals-400);
+
   --color-surface-primary: #ffffff;
   --color-surface-secondary: var(--color-neutrals-50);
   --color-surface-tertiary: var(--color-neutrals-200);
   --color-surface-elevated: var(--color-blue-700);
   --color-surface-elevated-transparent: var(--color-blue-700-transparent);
+  --color-surface-highlight: var(--color-yellow-600);
+
+  --color-ui-primary: var(--color-neutrals-900);
   --color-ui-secondary: var(--color-green-400);
   --color-ui-secondary-alternative: var(--color-green-600);
-  --color-on-surface-elevated: var(--color-neutrals-50);
-  --color-ui-primary: var(--color-neutrals-900);
+
   --color-on-ui-primary: var(--color-neutrals-50);
-  --color-text-weak: var(--color-neutrals-400);
-  --color-surface-highlight: var(--color-yellow-600);
+  --color-on-surface-elevated: var(--color-neutrals-50);
   --color-on-ui-primary-muted: var(--color-neutrals-400);
+
+  /* ==== Spacing ==== */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* ==== Fluid typography ==== */
+  --step--1: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
+  --step-0: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --step-2: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --step-3: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  --step-4: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+  --step-5: clamp(3rem, 2.2rem + 4vw, 5.5rem);
+
+  /* ==== Line heights ==== */
+  --leading-flat: 1;
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-loose: 1.7;
+
+  /* ==== Font families ==== */
+  --font-family-base: Arial, Helvetica, sans-serif;
+
+  /* ==== Font weights ==== */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ==== Border radius ==== */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-round: 999px;
+
+  /* ==== Widths ==== */
+  --container-max: 1200px;
+  --container-narrow: 70rem;
+
+  /* ==== Motion ==== */
+  --transition-fast: 160ms ease;
+  --transition-base: 240ms ease;
+
+  /* ==== Flow spacing ==== */
+  --flow-space: var(--space-lg);
 }
-
-/* ==== Spacing ==== */
-
-/* ==== Typography ==== */
-
-/* ==== Border Radii ==== */

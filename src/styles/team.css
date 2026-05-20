@@ -1,0 +1,175 @@
+.team-grid-section {
+    padding: 64px 0 80px;
+    background: #fff;
+  }
+
+  .team-grid-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Header */
+  .team-grid-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .team-grid-header-left {
+    max-width: 500px;
+  }
+
+  .team-grid-heading {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 12px;
+    font-family: "Georgia", serif;
+  }
+
+  .team-grid-body {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+  }
+
+
+  .team-grid-btn {
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: system-ui, sans-serif;
+    transition: background 0.2s;
+  }
+
+  .team-grid-btn:hover {
+    background: #ffffff;
+  }
+
+  /* Grid */
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 32px;
+  }
+
+  /* Card */
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-card-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .team-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .team-card-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #111;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-family: system-ui, sans-serif;
+  }
+
+  .team-card-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 8px;
+    font-family: "Georgia", serif;
+  }
+
+  .team-card-desc {
+    font-size: 0.78rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 14px;
+    font-family: system-ui, sans-serif;
+  }
+
+  .team-card-socials {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .team-card-social {
+    color: #111;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+
+  .team-card-social:hover {
+    opacity: 0.5;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid-header {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .team-grid-btn {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+
+
+.team-card-img-link {
+    display: block;
+    text-decoration: none;
+  }
+  
+  .team-card-name-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .team-card-name-link:hover {
+    text-decoration: underline;
+  }

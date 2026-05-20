@@ -1,0 +1,53 @@
+---
+import employeeData from "../data/employees.json";
+
+const featured = employeeData.filter((e) => ["1", "2"].includes(e.id));
+---
+
+<section class="team-section">
+  <div class="team-inner">
+    <!-- Left column -->
+    <div class="team-left">
+      <p class="team-label">OUR TEAM</p>
+      <h2 class="team-heading">We champion<br />the bold</h2>
+      <p class="team-body">
+        Our success stems from the synergy between dedicated teams and our
+        valued clients. We prioritize a company culture that fosters exceptional
+        productivity, ensures customer satisfaction.
+      </p>
+      <a href="/team" class="team-btn">
+        <p class="textee">Meet the Team</p>
+      </a>
+    </div>
+
+    <!-- Right column -->
+    <div class="team-cards">
+      {
+        featured.map((employee) => (
+          <article class="team-card">
+            <a href={`/team/${employee.id}`} class="team-card-img-link">
+              <div class="team-card-img">
+                <img
+                  src={employee.img}
+                  alt={employee.name}
+                  width="100"
+                  height="110"
+                />
+              </div>
+            </a>
+
+            <div class="team-card-info">
+              <h3 class="card-name">
+                <a href={`/team/${employee.id}`} class="team-card-name-link">
+                  {employee.name}
+                </a>
+              </h3>
+              <p class="card-title">{employee.title}</p>
+              <p class="card-desc">{employee.description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

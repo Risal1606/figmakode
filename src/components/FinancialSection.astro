@@ -1,0 +1,57 @@
+---
+const tools = [
+  {
+    title: "The Balance Sheet",
+    text: "The Balance Sheet is a summary of the assets and liabilities and equity of a business at a specific point of time.",
+    icon: "🗓️",
+  },
+  {
+    title: "Income Statement",
+    text: "The Income (Profit and Loss) Statement, commonly referred to as the P&L statement, summarizes the revenue and expenses for a specific time period.",
+    icon: "💳",
+  },
+  {
+    title: "Financial Plan",
+    text: "Keep your information current and review the documents on a regular basis with key individuals within your company.",
+    icon: "🏦",
+  },
+  {
+    title: "Financial Ratios",
+    text: "Ratios are useful when comparing your company with the competition on financial performance and also when benchmarking the performance of your company.",
+    icon: "💲",
+  },
+];
+---
+
+<section class="financial">
+  <div class="financial__inner">
+    <div class="financial__top">
+      <div class="financial__heading">
+        <p class="financial__eyebrow">Financial tools</p>
+        <h2 class="financial__title">Financial Projections</h2>
+        <p class="financial__text">
+          Financial projections are essential for planning and monitoring a
+          company’s performance. They provide insights into potential revenue,
+          expenses, and profitability over specific periods.
+        </p>
+      </div>
+
+      <div class="financial__actions" aria-hidden="true">
+        <button type="button" class="financial__arrow">←</button>
+        <button type="button" class="financial__arrow">→</button>
+      </div>
+    </div>
+
+    <div class="financial__grid">
+      {
+        tools.map((tool) => (
+          <article class="financial-card">
+            <span class="financial-card__icon">{tool.icon}</span>
+            <h3 class="financial-card__title">{tool.title}</h3>
+            <p class="financial-card__text">{tool.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

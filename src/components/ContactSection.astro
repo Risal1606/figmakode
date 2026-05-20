@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import PurpleImage from "@data/images/purple.png";
+import GarenImage from "@data/images/garen.png";
+import BrandImage from "@data/images/Brand.png";
+---
+
+<section class="contact">
+  <div class="contact__inner">
+    <div class="contact__content">
+      <p class="contact__eyebrow">Process</p>
+      <h2 class="contact__title">Contact Us. It’s Easy.</h2>
+      <p class="contact__text">
+        Leverage agile frameworks to provide a robust synopsis for high level
+        overviews. Iterative approaches to corporate strategy foster
+        collaborative.
+      </p>
+
+      <ul class="contact__list">
+        <li class="contact__item">
+          <span class="contact__icon contact__icon--yellow">📞</span>
+          <div>
+            <p class="contact__label">Call Today</p>
+            <p class="contact__value">+1 800 100 900</p>
+          </div>
+        </li>
+
+        <li class="contact__item">
+          <span class="contact__icon contact__icon--green">🕘</span>
+          <div>
+            <p class="contact__label">Monday To Friday</p>
+            <p class="contact__value">9AM - 5PM</p>
+          </div>
+        </li>
+
+        <li class="contact__item">
+          <span class="contact__icon contact__icon--light">📍</span>
+          <div>
+            <p class="contact__label">USA Office</p>
+            <p class="contact__value">195 Devonshire St Boston, MA 02110</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="contact__media">
+      <div class="contact__shape"></div>
+
+      <div class="contact__collage">
+        <div class="contact__image contact__image--large">
+          <Image src={PurpleImage} alt="Consultant sitting in chair" />
+        </div>
+
+        <div class="contact__stack">
+          <div class="contact__image contact__image--small">
+            <Image src={GarenImage} alt="Two consultants at laptop" />
+          </div>
+
+          <div class="contact__image contact__image--small">
+            <Image src={BrandImage} alt="Meeting discussion" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

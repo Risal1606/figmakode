@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  text: string;
+  icon: string;
+}
+
+const { title, text, icon } = Astro.props;
+---
+
+<article class="value-card">
+  <div class="value-card__icon" aria-hidden="true">
+    <span>{icon}</span>
+  </div>
+
+  <div class="value-card__body">
+    <h3 class="value-card__title">{title}</h3>
+    <p class="value-card__text">{text}</p>
+  </div>
+
+  <a href="#" class="value-card__link"
+    >Read More <span aria-hidden="true">→</span></a
+  >
+</article>
