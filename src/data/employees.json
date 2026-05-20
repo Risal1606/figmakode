@@ -19,7 +19,7 @@
       }
     ],
     "slug": "sarah-jasmine",
-    "img": "/src/data/images/sarah.webp"
+    "img": "/images/sarah.webp"
   },
   {
     "id": "2",
@@ -41,7 +41,7 @@
       }
     ],
     "slug": "john-carter",
-    "img": "/src/data/images/john.webp"
+    "img": "/images/john.webp"
   },
   {
     "id": "3",
@@ -63,7 +63,7 @@
       }
     ],
     "slug": "daisy-stella",
-    "img": "/src/data/images/daisy.webp"
+    "img": "/images/daisy.webp"
   },
   {
     "id": "4",
@@ -85,7 +85,7 @@
       }
     ],
     "slug": "maya-elizabeth",
-    "img": "/src/data/images/maya.webp"
+    "img": "/images/maya.webp"
   },
   {
     "id": "5",
@@ -107,7 +107,7 @@
       }
     ],
     "slug": "ryan-jackson",
-    "img": "/src/data/images/ryan.webp"
+    "img": "/images/ryan.webp"
   },
   {
     "id": "6",
@@ -129,6 +129,6 @@
       }
     ],
     "slug": "lilly-victoria",
-    "img": "/src/data/images/lilly.webp"
+    "img": "/images/lilly.webp"
   }
 ]
