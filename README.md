@@ -1,91 +1,37 @@
-# Opgaveskabelon til "Figma til kode"
+Kort refleksion
+I denne opgave har fokus været at bygge en løsning med moderne CSS, men stadig på en måde hvor siden fungerer, selv hvis ikke alle features er understøttet i browseren. En af de største udfordringer var at få de nye CSS-teknikker til at spille sammen med et layout, der stadig skulle være stabilt og overskueligt. Især anchor positioning krævede lidt ekstra arbejde, fordi det ikke bare kunne laves direkte uden at tænke på fallback.
 
-Se opgavebeskrivelsen på Fronter.
+Et sted hvor løsningen fungerede godt, var brugen af custom properties og mere moderne CSS-funktioner. For eksempel blev der arbejdet med tokens i :root, så farver, spacing og størrelser kunne genbruges flere steder i projektet. Det gjorde CSS’en nemmere at vedligeholde, og det gav også en mere ensartet styling på tværs af komponenter.
 
-## Medfølgende Data
+Et konkret eksempel er login-panelet, hvor der
+ både er lavet en almindelig fallback med position: absolute, og derefter en forbedret løsning med anchor positioning:
 
-Der medfølger indholdsdata i form af lokale JSON-filer, som du kan bruge til din opgave. Det er ikke et krav til opgaven, men det kan gøre det nemmere og hurtigere at få tekst og billeder ind i dit projekt.
+ .login-panel {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+}
 
-> [!NOTE]
-> Bemærk, at CaseStudy-siden allerede inkluderer data fra en lokal JSON-fil.
-> Bemærk også, at ikke alle billeder fra Figma-filen er i det lokale indholdsdata.
-
-Dokumentationen til anvendelsen af dataene finder du på: [https://frontend-design-theme.netlify.app/](https://frontend-design-theme.netlify.app/).
-
-Her er et eksempel på, hvordan du kan bruge dataene i dine Astro-komponenter:
-
-```astro
-import employees from "@data/employees.json";
-
-console.log(employees);
-```
-
-## Brug af hjælpekomponenter
-
-### DynamicImage.astro (`@helpers/DynamicImage.astro`)
-
-Brug denne komponent til at vise billeder dynamisk fra lokale datafiler. Komponenten slår billedet op i `src/data/images/` ud fra den sti, du sender ind via `src`.
-
-`DynamicImage` forventer mindst:
-
-- `src`: stien til billedet fra dine data
-- `alt`: alt-tekst til billedet
-
-Den forwarder desuden almindelige `<img>`-attributter som fx `class`, `style`, `loading` og `sizes`, samt udvalgte Astro `<Image>`-options som `width`, `height`, `format`, `quality`, `priority` og `layout`.
-
-Eksempel med data:
-
-```astro
-{employees.map((employee) => (
-  <DynamicImage
-    src={employee.img}
-    alt={employee.name}
-    width={200}
-    height={200}
-    class="employee-image"
-  />
-))}
-```
-
-Eksempel på styling:
-
-```astro
-<DynamicImage src={employee.img} alt={employee.name} class="employee-image" />
-
-<style>
-  .employee-image {
-    max-width: 300px;
-    border-radius: 1rem;
+@supports (anchor-name: --test) and (position-anchor: --test) {
+  .site-header__login {
+    anchor-name: --login-trigger;
   }
-</style>
-```
 
-### DynamicIcon.astro (`@helpers/DynamicIcon.astro`)
+  .login-panel {
+    top: auto;
+    right: auto;
+    position-anchor: --login-trigger;
+    inset-block-start: calc(anchor(bottom) + 1rem);
+    inset-inline-end: anchor(right);
+  }
+}
 
-`DynamicIcon` bruges til at vise SVG-ikoner dynamisk baseret på et navn fra dine data. `name` skal matche filnavnet på et ikon i `src/icons/`.
+Det er brugbart, fordi løsningen først virker på en simpel måde i alle browsere, og derefter bliver forbedret i browsere, der understøtter de nye features. Det er også et eksempel på progressive enhancement, fordi basisoplevelsen stadig virker uden den nyeste CSS.
 
-Komponenten forwarder øvrige props direkte til SVG-komponenten, så du fx kan sende `class`, `width`, `height` og lignende med.
+Defensive CSS er især tænkt ind i forhold til layout og responsive løsninger. Der er blandt andet brugt width: min(23rem, calc(100vw - 2rem));, så login-panelet ikke bliver for bredt på små skærme. Derudover er der lavet media queries, så elementer flytter sig og centreres anderledes på smallere skærme. Det gør løsningen mere robust og mindsker risikoen for overflow eller mærkelige placeringer.
 
-Eksempel med data:
+Der er også brugt progressive enhancement andre steder i løsningen, fx hvor nyere features kun bliver aktiveret med @supports. På den måde bliver browseren ikke "straffet", hvis den ikke understøtter det nyeste, men får bare en simplere version. Det passer godt til tanken fra undervisningen om, at en hjemmeside først og fremmest skal fungere, og derefter kan forbedres.
 
-```astro
-{employee.social_links.map((link) => (
-  <DynamicIcon name={link.icon} width={24} height={24} class="social-icon" />
-))}
-```
+CSS’en er organiseret sådan, at de globale regler ligger øverst, fx reset, variabler, generelle farver, typography og layoutregler, som bruges flere steder. Derefter kommer komponent-specifik CSS, fx til header, login-panel, FAQ og andre sektioner. Det gjorde det lettere at finde rundt i filen, fordi de overordnede regler ikke blev blandet sammen med detaljerne for de enkelte komponenter.
 
-Hvis ikonet ikke findes, vises der ikke noget output, og komponenten logger en advarsel i konsollen.
-
----
-
-## Import af SVG-ikoner direkte
-
-Du kan importere SVG-ikoner direkte i dine komponenter ved at importere dem:
-
-```astro
-import Checkmark from "@icons/checkmark.svg";
-
-<Checkmark width={32} height={32} class="my-icon" />
-```
-
-Se evt. `src/pages/svgs.astro` for flere eksempler på direkte import og brug af SVG-ikoner.
+Alt i alt var opgaven god til at vise forskellen på bare at få noget til at se rigtigt ud, og faktisk at bygge det på en måde, der er gennemtænkt. Det mest vellykkede i løsningen er, at den kombinerer moderne CSS med fallback og responsive hensyn, så den både virker praktisk og viser de teknikker, der har været arbejdet med i undervisningen.
