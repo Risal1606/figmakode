@@ -34,6 +34,23 @@
   --color-on-surface-elevated: var(--color-neutrals-50);
   --color-on-ui-primary-muted: var(--color-neutrals-400);
 
+  /* ==== Section colors (about/team/case content, reused 2+ places) ==== */
+  --color-ink: #111111;
+  --color-slate: #666666;
+  --color-black: #000000;
+  --color-charcoal: #555555;
+  --color-graphite: #444444;
+  --color-ash: #888888;
+  --color-hairline: #dddddd;
+  --color-mist: #f5f5f5;
+  --color-steel: #6b7280;
+  --color-midnight: #111827;
+  --color-navy-deep: #0f172a;
+  --color-obsidian: #020617;
+  --color-slate-muted: #475569;
+  --color-case-navy: #1a1a2e;
+  --color-case-gold: #e6a817;
+
   /* ==== Spacing ==== */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;

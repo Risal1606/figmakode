@@ -1,69 +1,69 @@
 /* ── Page banner (the top "Case Studies / Taxes & Efficiency" block) ── */
 .case-banner {
     text-align: center;
-    padding: 3rem 1rem 2rem;
-    border-bottom: 3px solid #e6a817;
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+    border-bottom: 3px solid var(--color-case-gold);
   }
-  
+
   .case-banner__eyebrow {
     font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #888;
-    margin-bottom: 0.5rem;
+    color: var(--color-ash);
+    margin-bottom: var(--space-xs);
   }
-  
+
   .case-banner__title {
     font-size: 42px;
     font-weight: 800;
-    color: #1a1a2e;
+    color: var(--color-case-navy);
     margin: 0 0 1.25rem;
     line-height: 1.1;
   }
-  
+
   .case-banner__desc {
     max-width: 520px;
     margin: 0 auto;
     font-size: 15px;
     line-height: 1.75;
-    color: #666;
+    color: var(--color-slate);
   }
-  
+
   /* ── Article wrapper ── */
   .case-study {
     max-width: 860px;
     margin: 0 auto;
-    padding: 0 1.5rem 5rem;
+    padding: 0 var(--space-lg) 5rem;
   }
-  
+
   /* ── Hero image + meta bar ── */
   .case-study__hero {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    margin: 3rem 0 0;
+    margin: var(--space-2xl) 0 0;
   }
-  
+
   .case-study__hero-img {
     width: 100%;
     height: 420px;
     object-fit: cover;
     display: block;
   }
-  
+
   .case-study__meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    background: #1a1a2e;
-    padding: 1.25rem 2rem;
+    gap: var(--space-lg);
+    background: var(--color-case-navy);
+    padding: 1.25rem var(--space-xl);
     border-radius: 0 0 10px 10px;
   }
-  
+
   .case-study__dl {
     display: flex;
-    gap: 3rem;
+    gap: var(--space-2xl);
     margin: 0;
   }
   
@@ -80,20 +80,20 @@
     color: #aaa;
     font-weight: 500;
   }
-  
+
   .case-study__dl-group dd {
     font-size: 14px;
     font-weight: 600;
-    color: #fff;
+    color: var(--color-surface-primary);
     margin: 0;
   }
-  
+
   .case-study__btn {
     flex-shrink: 0;
     display: inline-block;
     padding: 10px 22px;
-    background: #e6a817;
-    color: #1a1a2e;
+    background: var(--color-case-gold);
+    color: var(--color-case-navy);
     border-radius: 30px;
     font-size: 13px;
     font-weight: 700;
@@ -111,28 +111,39 @@
     margin-top: 3.5rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--space-2xl);
   }
-  
+
+  /* Flow spacing: each section's content stacks with a consistent
+     rhythm instead of one-off margins on every element */
+  .case-study__section {
+    --flow-space: var(--space-md);
+  }
+
+  .case-study__section > * + * {
+    margin-top: var(--flow-space);
+  }
+
+  .case-study__text + .case-study__text {
+    --flow-space: 0.85em;
+  }
+
   .case-study__section-title {
     font-size: 24px;
     font-weight: 700;
-    color: #1a1a2e;
-    margin: 0 0 1rem;
+    color: var(--color-case-navy);
   }
-  
+
   .case-study__text {
     font-size: 14.5px;
     line-height: 1.8;
-    color: #555;
-    margin: 0 0 0.85em;
+    color: var(--color-charcoal);
   }
-  
+
   /* ── Highlights ── */
   .case-study__highlights {
     list-style: disc;
     padding-left: 1.25rem;
-    margin: 1rem 0 0;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -141,29 +152,29 @@
   .case-study__highlights li {
     font-size: 14px;
     line-height: 1.65;
-    color: #444;
+    color: var(--color-graphite);
   }
-  
+
   /* ── Section image (Storyboard) ── */
   .case-study__section-img {
     width: 100%;
     max-width: 560px;
     border-radius: 8px;
-    margin-top: 1.5rem;
+    margin-top: var(--space-lg);
     display: block;
   }
-  
+
   /* ── Responsive ── */
   @media (max-width: 600px) {
     .case-study__meta {
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
+      gap: var(--space-md);
     }
-  
+
     .case-study__dl {
       flex-direction: column;
-      gap: 0.75rem;
+      gap: var(--space-sm);
     }
   
     .case-study__hero-img {

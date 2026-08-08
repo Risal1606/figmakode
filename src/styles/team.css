@@ -1,12 +1,12 @@
 .team-grid-section {
     padding: 64px 0 80px;
-    background: #fff;
+    background: var(--color-surface-primary);
   }
 
   .team-grid-inner {
     max-width: 1060px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 var(--space-xl);
   }
 
   /* Header */
@@ -25,14 +25,14 @@
   .team-grid-heading {
     font-size: 1.9rem;
     font-weight: 800;
-    color: #111;
+    color: var(--color-ink);
     margin: 0 0 12px;
     font-family: "Georgia", serif;
   }
 
   .team-grid-body {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--color-slate);
     line-height: 1.7;
     margin: 0;
     font-family: system-ui, sans-serif;
@@ -41,8 +41,8 @@
 
   .team-grid-btn {
     display: inline-block;
-    background: #000000;
-    color: #fff;
+    background: var(--color-black);
+    color: var(--color-surface-primary);
     font-size: 0.8rem;
     font-weight: 500;
     padding: 12px 26px;
@@ -55,7 +55,7 @@
   }
 
   .team-grid-btn:hover {
-    background: #ffffff;
+    background: var(--color-surface-primary);
   }
 
   /* Grid */
@@ -94,8 +94,8 @@
     position: absolute;
     bottom: 12px;
     right: 12px;
-    background: #111;
-    color: #fff;
+    background: var(--color-ink);
+    color: var(--color-surface-primary);
     font-size: 0.7rem;
     font-weight: 500;
     padding: 5px 12px;
@@ -106,14 +106,14 @@
   .team-card-name {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #111;
+    color: var(--color-ink);
     margin: 0 0 8px;
     font-family: "Georgia", serif;
   }
 
   .team-card-desc {
     font-size: 0.78rem;
-    color: #666;
+    color: var(--color-slate);
     line-height: 1.6;
     margin: 0 0 14px;
     font-family: system-ui, sans-serif;
@@ -126,7 +126,7 @@
   }
 
   .team-card-social {
-    color: #111;
+    color: var(--color-ink);
     display: flex;
     align-items: center;
     transition: opacity 0.2s;
@@ -154,7 +154,7 @@
   }
 
   .team-grid-btn {
-    color: #fff !important;
+    color: var(--color-surface-primary) !important;
     text-decoration: none !important;
   }
 
