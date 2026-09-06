@@ -32,12 +32,12 @@ import experience from "../data/experience.json";
 <style>
   .experience {
     padding-block: 6.5rem;
-    background: #f0c13b;
-    color: #0b1020;
+    background: var(--color-gold-bright);
+    color: var(--color-navy-black);
   }
 
   .experience__inner {
-    width: min(100% - 2rem, 1220px);
+    width: min(100% - var(--space-xl), 1220px);
     margin-inline: auto;
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -55,23 +55,23 @@ import experience from "../data/experience.json";
     letter-spacing: 0.16em;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #111827;
+    color: var(--color-midnight);
   }
 
   .experience__title {
-    margin: 0 0 1.5rem;
+    margin: 0 0 var(--space-lg);
     font-size: clamp(3rem, 4.8vw, 4.75rem);
     line-height: 0.96;
     font-weight: 700;
     max-width: 8ch;
-    color: #0b1020;
+    color: var(--color-navy-black);
   }
 
   .experience__text {
     margin: 0;
     font-size: 1rem;
     line-height: 1.6;
-    color: #111827;
+    color: var(--color-midnight);
   }
 
   .experience__stats {
@@ -109,7 +109,7 @@ import experience from "../data/experience.json";
     position: absolute;
     inset: var(--thickness);
     border-radius: 50%;
-    background: #f0c13b;
+    background: var(--color-gold-bright);
   }
 
   .experience-stat__circle::after {
@@ -120,7 +120,7 @@ import experience from "../data/experience.json";
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background: #0b1020;
+    background: var(--color-navy-black);
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.96);
   }
 
@@ -130,21 +130,21 @@ import experience from "../data/experience.json";
     font-size: 2.35rem;
     font-weight: 700;
     line-height: 1;
-    color: #0b1020;
+    color: var(--color-navy-black);
   }
 
   .experience-stat__label {
-    margin: 1.5rem 0 0;
+    margin: var(--space-lg) 0 0;
     font-size: 1.15rem;
     line-height: 1.2;
     font-weight: 600;
-    color: #0b1020;
+    color: var(--color-navy-black);
   }
 
   @media (max-width: 1100px) {
     .experience__inner {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: var(--space-2xl);
     }
 
     .experience__content {
@@ -155,7 +155,7 @@ import experience from "../data/experience.json";
   @media (max-width: 900px) {
     .experience__stats {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: var(--space-xl);
     }
 
     .experience-stat__circle {

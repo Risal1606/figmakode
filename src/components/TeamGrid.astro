@@ -15,11 +15,7 @@ import employeeData from "../data/employees.json";
           as we embark on exciting projects and create lasting impacts.
         </p>
       </div>
-      <a
-        href="/contact"
-        class="team-grid-btn"
-        style="color: #fff; text-decoration: none;">Join our team</a
-      >
+      <a href="/contact" class="team-grid-btn">Join our team</a>
     </div>
 
     <!-- Grid -->
@@ -106,13 +102,13 @@ import employeeData from "../data/employees.json";
 <style>
   .team-grid-section {
     padding: 64px 0 80px;
-    background: #fff;
+    background: var(--color-surface-primary);
   }
 
   .team-grid-inner {
     max-width: 1060px;
     margin: 0 auto;
-    padding: 0 32px;
+    padding: 0 var(--space-xl);
   }
 
   .team-grid-header {
@@ -120,7 +116,7 @@ import employeeData from "../data/employees.json";
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
-    margin-bottom: 48px;
+    margin-bottom: var(--space-2xl);
   }
 
   .team-grid-header-left {
@@ -130,14 +126,14 @@ import employeeData from "../data/employees.json";
   .team-grid-heading {
     font-size: 1.9rem;
     font-weight: 800;
-    color: #111;
-    margin: 0 0 12px;
+    color: var(--color-ink);
+    margin: 0 0 var(--space-sm);
     font-family: "Georgia", serif;
   }
 
   .team-grid-body {
     font-size: 0.8rem;
-    color: #666;
+    color: var(--color-slate);
     line-height: 1.7;
     margin: 0;
     font-family: system-ui, sans-serif;
@@ -146,11 +142,11 @@ import employeeData from "../data/employees.json";
   .team-grid-btn {
     display: inline-block;
     background: var(--color-action);
-    color: var(--color-text);
+    color: var(--color-surface-primary);
     font-size: 0.8rem;
     font-weight: 500;
-    padding: 12px 26px;
-    border-radius: 999px;
+    padding: var(--space-sm) 26px;
+    border-radius: var(--radius-round);
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
@@ -169,7 +165,7 @@ import employeeData from "../data/employees.json";
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px 32px;
+    gap: var(--space-2xl) var(--space-xl);
   }
 
   .team-card {
@@ -183,9 +179,9 @@ import employeeData from "../data/employees.json";
     position: relative;
     width: 100%;
     aspect-ratio: 3 / 4;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: var(--space-md);
   }
 
   .team-card-img-link {
@@ -205,20 +201,20 @@ import employeeData from "../data/employees.json";
     position: absolute;
     bottom: 12px;
     right: 12px;
-    background: #111;
-    color: #fff;
+    background: var(--color-ink);
+    color: var(--color-surface-primary);
     font-size: 0.7rem;
     font-weight: 500;
-    padding: 5px 12px;
-    border-radius: 999px;
+    padding: 5px var(--space-sm);
+    border-radius: var(--radius-round);
     font-family: system-ui, sans-serif;
   }
 
   .team-card-name {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #111;
-    margin: 0 0 8px;
+    color: var(--color-ink);
+    margin: 0 0 var(--space-xs);
     font-family: "Georgia", serif;
   }
 
@@ -233,7 +229,7 @@ import employeeData from "../data/employees.json";
 
   .team-card-desc {
     font-size: 0.78rem;
-    color: #666;
+    color: var(--color-slate);
     line-height: 1.6;
     margin: 0 0 14px;
     font-family: system-ui, sans-serif;
@@ -241,12 +237,12 @@ import employeeData from "../data/employees.json";
 
   .team-card-socials {
     display: flex;
-    gap: 12px;
+    gap: var(--space-sm);
     justify-content: center;
   }
 
   .team-card-social {
-    color: #111;
+    color: var(--color-ink);
     display: flex;
     align-items: center;
     transition: opacity 0.2s;

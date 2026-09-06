@@ -29,11 +29,22 @@
     color: var(--color-slate);
   }
 
-  /* ── Article wrapper ── */
+  /* ── Article wrapper (macro layout) ──
+     Three-track grid: a flexible min-space-lg gutter on each side,
+     and a content column capped at 860px. Section content sits in
+     the middle track; a section can opt into "grid-column: 1 / -1"
+     to bleed across the full width instead. */
   .case-study {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 var(--space-lg) 5rem;
+    display: grid;
+    grid-template-columns:
+      minmax(var(--space-lg), 1fr)
+      minmax(0, 860px)
+      minmax(var(--space-lg), 1fr);
+    padding-block-end: 5rem;
+  }
+
+  .case-study__header {
+    grid-column: 2;
   }
 
   /* ── Hero image + meta bar ── */
@@ -106,17 +117,21 @@
     opacity: 0.85;
   }
   
-  /* ── Sections ── */
+  /* ── Sections ──
+     Subgrids into the article's 3 macro columns so a section can
+     stay in the narrow content column while still being able to
+     opt a specific element (the Storyboard image) into a full
+     bleed, aligned to the very same grid the header/meta use. */
   .case-study__sections {
+    grid-column: 1 / -1;
     margin-top: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xl);
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: var(--space-2xl);
   }
 
-  /* Flow spacing: each section's content stacks with a consistent
-     rhythm instead of one-off margins on every element */
   .case-study__section {
+    grid-column: 2;
     --flow-space: var(--space-md);
   }
 
@@ -129,7 +144,7 @@
   }
 
   .case-study__section-title {
-    font-size: 24px;
+    font-size: var(--step-2);
     font-weight: 700;
     color: var(--color-case-navy);
   }
@@ -155,8 +170,13 @@
     color: var(--color-graphite);
   }
 
-  /* ── Section image (Storyboard) ── */
+  /* ── Section image (Storyboard) ──
+     Breaks out of the narrow content column and bleeds across the
+     full macro grid, made possible by .case-study__sections being
+     a subgrid of the article's column tracks. */
   .case-study__section-img {
+    grid-column: 1 / -1;
+    justify-self: center;
     width: 100%;
     max-width: 560px;
     border-radius: 8px;

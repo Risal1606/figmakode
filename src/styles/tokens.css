@@ -50,6 +50,13 @@
   --color-slate-muted: #475569;
   --color-case-navy: #1a1a2e;
   --color-case-gold: #e6a817;
+  --color-gold-deep: #f0c24b;
+  --color-gold-warm: #efc247;
+  --color-gold-bright: #f0c13b;
+  --color-header-navy: #07153a;
+  --color-navy-black: #0b1020;
+  --color-cloud: #f7f7f8;
+  --color-taupe: #78716c;
 
   /* ==== Spacing ==== */
   --space-2xs: 0.25rem;
